@@ -1,13 +1,13 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'jsonapi/resources/extensions/version'
+require 'jsonapi/extensions/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "jsonapi-resources-extensions"
-  spec.version       = Jsonapi::Resources::Extensions::VERSION
+  spec.version       = JSONAPI::Extensions::VERSION
   spec.authors       = ["Moritz Lawitschka"]
-  spec.email         = ["me@moritzlawitschka.de"]
+  spec.email         = ["moritz.lawitschka@suitepad.de"]
 
   spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
   spec.description   = %q{TODO: Write a longer description or delete this line.}
