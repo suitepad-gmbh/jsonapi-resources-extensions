@@ -51,7 +51,7 @@ module JSONAPI
               return
             end
             controller.authorize policy_record_for(records)
-          rescue Pundit::NotAuthorizedError
+          rescue ::Pundit::NotAuthorizedError
             raise JSONAPI::Extensions::Exceptions::Forbidden.new
           end
 
