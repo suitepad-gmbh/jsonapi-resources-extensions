@@ -46,6 +46,11 @@ module JSONAPI
           end
 
           def authorize_policy(records, controller)
+            # That method is called twice for "remove", nobody knows why. First
+            # time it gets called with the resource's class, then with the
+            # actual model. So just skip authorization if it's a class...
+            return if records.instance_of? Class
+
             if records.is_a?(ActiveRecord::Relation) && records.count == 0
               controller.skip_authorization
               return
